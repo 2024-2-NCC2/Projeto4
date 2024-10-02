@@ -8,26 +8,20 @@
 -----------
 ## CONECTA +
 -----------
-###
------------
 #### Integrantes: Julia Tosato, Vitor do Amaral, João Victor Rezende
-
 -----------
-
 #### Professores Orientadores: David de Oliveira Lemes, Katia Milani Lara Bossi, Victor Rosetti, Francisco de Souza Escobar.
 ----------
 ##### Descrição: Nossa plataforma web facilita o encontro entre *ONGs que buscam apoio e empresas que desejam investir em causas sociais*. Através do cadastro simples, criamos um elo poderoso, onde ambos os lados são beneficiados: as ONGs ganham *visibilidade e novas oportunidades de financiamento*, enquanto as empresas fortalecem seu *valor social*, contribuem diretamente para o desenvolvimento comunitário e podem até destinar parte de seus impostos para projetos transformadores.
 --------
 ## 🛠 Estrutura de pastas
-
 -Raiz<br>
-|<br>
-|-->documentos<br>
-  &emsp;|-->entrega-1<br>
-|-->imagens<br>
-|-->src<br>
-  &emsp;|-->Backend<br>
-  &emsp;|-->Frontend<br>
+|-->documentos (toda a documentação do projeto)<br>
+  &emsp;|-->DB<br>
+|-->site-estatico (referente a entrega 1)<br>
+|-->src (site react, referente também a entrega 1)<br>
+  &emsp;|-->backend<br>
+  &emsp;|-->frontend<br>
 |readme.md<br>
 
 ## 🛠 Instalação
