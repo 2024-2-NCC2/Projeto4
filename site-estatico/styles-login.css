@@ -1,0 +1,78 @@
+body {
+    height: 90vh;
+    background-image: url('./assets/bg-login.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    font-size: 16px;
+    color: #455a64;
+    font-family: "Outfit", sans-serif;
+}
+
+.login-box {
+    background-color: white;
+    padding: 32px 48px;
+    border-radius: 32px;
+    width: 24vw;
+}
+
+h2 {
+    padding-bottom: 38px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+}
+
+.input-text {
+    border: none;
+    border-radius: 12px;
+    background-color: #d9d9d9;
+    height: 36px;
+    width: 100%;
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 12px;
+    justify-content: left;
+}
+
+.enter {
+    padding: 8px 32px;
+    background-color: #074173;
+    border: none;
+    border-radius: 12px;
+    width: 100%;
+    color: #cdcdcd;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.links > a {
+    display: flex;
+    justify-content: center;
+    color: #455a64;
+    text-decoration: none;
+}
