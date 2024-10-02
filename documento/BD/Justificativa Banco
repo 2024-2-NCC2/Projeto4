@@ -1,0 +1,11 @@
+Escolhemos um Banco de Dados que contém as seguintes tabelas
+
+Cadastro de Empresas ("company"):
+onde teremos informações de CNPJ, área de atuação, endereço, razão social, contato, ODS de interesse e se é parceiro ou não 
+(possibilidade de serem parceiros ou recipientes de investimentos).
+
+Além disso, temos também as informações a respeito das ODSs (stg), que serão identificadas com um ID, nome da ODS e quantidade de empresas
+que investem nessa área.
+
+Também, teremos uma tabela para informações de usuário que incluem o username e a senha.
+
