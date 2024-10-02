@@ -1,7 +1,12 @@
-# Projeto4
-Projeto 4 <br/>
+# FECAP - Fundação de Comércio Álvares Penteado
+# Projeto 4
+-----------
 ## CONECTA +
+-----------
 ###
+-----------
 #### Integrantes: Julia Tosato, Vitor Amaral, João Victor Rezende
-Projeto 4 <br/>
-Link 1 - Banco de Dados: https://github.com/2024-2-NCC2/Projeto4/blob/main/BD/README
+----------
+##### Descrição: Nossa plataforma web facilita o encontro entre *ONGs que buscam apoio e empresas que desejam investir em causas sociais*. Através do cadastro simples, criamos um elo poderoso, onde ambos os lados são beneficiados: as ONGs ganham *visibilidade e novas oportunidades de financiamento*, enquanto as empresas fortalecem seu *valor social*, contribuem diretamente para o desenvolvimento comunitário e podem até destinar parte de seus impostos para projetos transformadores.
+--------
+##### Estrutura de Pastas
