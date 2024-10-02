@@ -24,10 +24,6 @@
 |<br>
 |-->documentos<br>
   &emsp;|-->entrega-1<br>
-|-->executáveis<br>
-  &emsp;|-->windows<br>
-  &emsp;|-->android<br>
-  &emsp;|-->HTML<br>
 |-->imagens<br>
 |-->src<br>
   &emsp;|-->Backend<br>
