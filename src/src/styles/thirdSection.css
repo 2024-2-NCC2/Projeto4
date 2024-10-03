@@ -1,0 +1,35 @@
+.thirdSection {
+    height: 110vh;
+    background-image: url('../../public/bg3.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.invite-ong {
+    margin-top: 82px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.invite-ong > h1 {
+    color: #074173;
+}
+
+.content-ong > h3, .content-ong > p, .content-ong > ul > li {
+    color: #074173;
+}
+
+.invite-ong-content {
+    color: #074173;
+    padding-left: 300px;
+    padding-right: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.content-ong {
+    flex: 3;
+}
