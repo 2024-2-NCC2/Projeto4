@@ -23,8 +23,8 @@
   &emsp;|-->DB<br>
 |-->site-estatico (referente a entrega 1)<br>
 |-->src (site react, referente também a entrega 1)<br>
-  &emsp;|-->backend<br>
-  &emsp;|-->frontend<br>
+  &emsp;|-->assets<br>
+  &emsp;|-->component<br>
 |readme.md<br>
 
 ## 🛠 Instalação
