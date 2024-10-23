@@ -30,5 +30,8 @@
 ## 🛠 Instalação
 <b>HTML:</b>
 
+## 🛠 Links
+|-->Banco de dados: https://github.com/2024-2-NCC2/Projeto4/blob/main/documentos/BD/banco%20de%20dados%20-%20tabelas.sql
+
 Não há instalação!
 Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
