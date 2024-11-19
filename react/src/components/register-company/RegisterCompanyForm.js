@@ -23,12 +23,12 @@ function RegisterCompanyForm() {
             }
         }).catch(err => console.log(err))
     }, [])
-    console.log(name)
 
     const handleClickRegisterCompany = async (values) => {
         try {
             Axios.post("http://localhost:3001/register-company", {
-                email: values.email,
+                email: name,
+                name: values.name,
                 area: values.area,
                 contact: values.contact,
                 address: values.address,
@@ -41,7 +41,7 @@ function RegisterCompanyForm() {
     };
 
     const validationRegister = yup.object().shape({
-        email: yup.string().email("Insira um e-mail válido").required("Este campo é obrigatório"),
+        name: yup.string().required("Informe o nome da ONG"),
         area: yup.string().required("Informe a área de atuação"),
         contact: yup.string().required("Informe o contato"),
         address: yup.string().required("Informe o endereço"),
@@ -69,7 +69,7 @@ function RegisterCompanyForm() {
             >
                 {({ values }) => (
                     <Form>
-                        {['email', 'area', 'contact', 'address', 'cnpj', 'ods'].map((field) => (
+                        {['name', 'area', 'contact', 'address', 'cnpj', 'ods'].map((field) => (
                             <InputBox
                                 key={field}
                                 isActive={focusedField[field] || values[field]}
@@ -77,10 +77,11 @@ function RegisterCompanyForm() {
                                 <label className="input-label">
                                     {field === 'area' ? 'Área de atuação' :
                                         field === 'contact' ? 'Contato' :
-                                            field === 'address' ? 'Endereço' :
-                                                field === 'cnpj' ? 'cnpj' :
-                                                    field === 'ods' ? 'ODS atendida' :
-                                                        field.charAt(0).toUpperCase() + field.slice(1)}
+                                            field === 'name' ? 'Nome da ONG' :
+                                                field === 'address' ? 'Endereço' :
+                                                    field === 'cnpj' ? 'cnpj' :
+                                                        field === 'ods' ? 'ODS atendida' :
+                                                            field.charAt(0).toUpperCase() + field.slice(1)}
                                 </label>
                                 <Field
                                     name={field}
