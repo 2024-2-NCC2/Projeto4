@@ -62,7 +62,7 @@ app.post("/register", (req, res) => {
 })
 
 app.post("/register-company", async (req, res) => {
-    const { email, contact, address, cnpj, ods } = req.body;
+    const { name, contact, address, cnpj, area, email, ods } = req.body;
 
     try {
         const userQuery = "SELECT id FROM users WHERE email = ?";
@@ -111,7 +111,7 @@ app.post("/register-company", async (req, res) => {
 
                 db.query(
                     companyQuery,
-                    [cnpj, "Empresa Padrão", contact, address, "Setor Padrão", stgId, userId],
+                    [cnpj, name, contact, address, area, stgId, userId],
                     (companyErr) => {
                         if (companyErr) {
                             return res.status(500).json({ message: "Erro ao registrar empresa." });
@@ -155,7 +155,6 @@ app.post("/login", (req, res) => {
 })
 
 app.get('/', (req, res) => {
-    console.log(req.session)
     if (req.session.email) {
         return res.json({ valid: true, email: req.session.email })
     } else {
@@ -163,6 +162,38 @@ app.get('/', (req, res) => {
         return res.json({ valid: false })
     }
 })
+
+app.get('/list-companies', (req, res) => {
+    try {
+        const query = `
+            SELECT 
+                companies.id,
+                companies.cnpj,
+                companies.name,
+                companies.contact,
+                companies.adress,
+                companies.company_sector,
+                companies.is_partner,
+                stg.name AS ods_name,
+                users.email AS user_email
+            FROM companies
+            LEFT JOIN stg ON companies.stg_id = stg.stg_id
+            LEFT JOIN users ON companies.user_id = users.id
+        `;
+
+        db.query(query, (err, result) => {
+            if (err) {
+                console.error("Erro ao consultar empresas:", err);
+                return res.status(500).json({ message: "Erro ao buscar empresas." });
+            }
+
+            return res.status(200).json(result);
+        });
+    } catch (error) {
+        console.error("Erro inesperado:", error);
+        return res.status(500).json({ message: "Erro inesperado no servidor." });
+    }
+});
 
 app.listen(3001, () => {
     console.log(`Server listening on 3001`);
