@@ -1,0 +1,17 @@
+.form-field {
+    display: inline-block;
+    padding: 3px;
+    margin-top: 18px;
+    border: 1;
+    border-radius: 4px;
+    color: black;
+
+}
+
+.form-error {
+    display: block;
+    color: red;
+    font-size: 0.8em;
+    font-weight: 600;
+    padding-left: 8px;
+}
