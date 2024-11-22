@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import Navbar from "../home/Navbar";
-import bg from '../../public/bg-graphic.png'
+import bg from '../../public/bg-graphic.png';
 import axios from 'axios';
 
 export default function ListCompanies() {
@@ -17,7 +17,7 @@ export default function ListCompanies() {
                 console.error("Erro ao buscar empresas:", error);
             });
     }, []);
-    console.log(ongs)
+
     return (
         <ListContainer>
             <Navbar name={true} />
@@ -40,7 +40,7 @@ export default function ListCompanies() {
                 </Cards>
             </MainContent>
         </ListContainer>
-    )
+    );
 }
 
 const Card = styled.div`
@@ -50,10 +50,19 @@ const Card = styled.div`
     padding: 16px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    
+
     h2 {
         color: #1679AB;
         padding: 16px;
+        font-size: 18px;
+
+        @media (max-width: 768px) {
+            font-size: 16px;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 14px;
+        }
     }
 
     h1 {
@@ -61,15 +70,31 @@ const Card = styled.div`
         color: #1679AB;
         display: flex;
         align-items: center;
-        font-weigth: 700;
+        font-weight: 700;
         gap: 8px;
+
+        @media (max-width: 768px) {
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 12px;
+        }
     }
-    
+
     p {
         text-align: left;
         color: black;
-        font-weigth: 300;
+        font-weight: 300;
         font-size: 14px;
+
+        @media (max-width: 768px) {
+            font-size: 12px;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 10px;
+        }
     }
 `;
 
@@ -79,7 +104,11 @@ const ListContainer = styled.div`
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
-`
+
+    @media (max-width: 1024px) {
+        background-position: center;
+    }
+`;
 
 const MainContent = styled.div`
     margin-top: 3%;
@@ -87,16 +116,41 @@ const MainContent = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-`
+
+    @media (max-width: 768px) {
+        margin-top: 5%;
+    }
+`;
 
 const H1 = styled.h1`
     display: flex;
     justify-content: center;
     margin-bottom: 52px;
-`
+    font-size: 24px;
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+`;
 
 const Cards = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 16px;
-`
+
+    @media (max-width: 768px) {
+        gap: 12px;
+    }
+
+    @media (max-width: 480px) {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 8px;
+    }
+`;
