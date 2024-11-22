@@ -9,9 +9,9 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
 const db = mysql.createPool({
-    host: "localhost",
-    user: "root",
-    password: "password",
+    host: "conecta-db.mysql.database.azure.com",
+    user: "conecta",
+    password: "Sendokai123",
     database: "db"
 })
 
@@ -158,7 +158,6 @@ app.get('/', (req, res) => {
     if (req.session.email) {
         return res.json({ valid: true, email: req.session.email })
     } else {
-        console.log('false hit')
         return res.json({ valid: false })
     }
 })

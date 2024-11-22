@@ -1,23 +1,47 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 import './Navbar';
-import bg2 from '../../public/bg2.png'
-import img from '../../public//Live collaboration-cuate 1.svg'
+import bg2 from '../../public/bg2.png';
+import img from '../../public/Live collaboration-cuate 1.svg';
 
 export default function SecondSection() {
     const SencondSectionContainer = styled.div`
-        height: 100vh;
+        height: auto;
         background-image: url(${bg2});
         background-repeat: no-repeat;
         background-position: top;
         background-size: cover;
-    `
+        position: relative;
+        top: -10px;
+
+        @media (max-width: 1024px) {
+            height: auto;
+            padding-bottom: 20px;
+        }
+    `;
 
     const Header = styled.div`
         margin-top: 82px;
         margin-bottom: 100px;
         display: flex;
         justify-content: center;
-    `
+
+        h1 {
+            font-size: 36px;
+
+            @media (max-width: 1024px) {
+                font-size: 32px;
+                text-align: center;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 28px;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 24px;
+            }
+        }
+    `;
 
     const InvitePartnerContent = styled.div`
         padding-left: 257px;
@@ -25,17 +49,75 @@ export default function SecondSection() {
         display: flex;
         flex-direction: row;
         justify-content: center;
-    `
+
+        @media (max-width: 1024px) {
+            padding-left: 50px;
+            padding-right: 50px;
+            flex-direction: column; /* Empilha as seções verticalmente */
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    `;
 
     const FirstContentSection = styled.div`
         flex: 2;
-    `
-    
+
+        h3 {
+            font-size: 28px;
+
+            @media (max-width: 1024px) {
+                font-size: 24px;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 20px;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 18px;
+            }
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+
+            @media (max-width: 1024px) {
+                font-size: 14px;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 12px;
+            }
+        }
+    `;
+
     const SecondContentSection = styled.div`
         flex: 3;
         display: flex;
         justify-content: center;
-    `
+
+        img {
+            max-width: 100%;
+            height: auto;
+
+            @media (max-width: 1024px) {
+                max-width: 80%;
+            }
+
+            @media (max-width: 768px) {
+                max-width: 70%;
+            }
+
+            @media (max-width: 480px) {
+                max-width: 100%; /* Preenche todo o espaço disponível */
+            }
+        }
+    `;
 
     return (
         <SencondSectionContainer id="partners">
@@ -77,9 +159,9 @@ export default function SecondSection() {
                     </p>
                 </FirstContentSection>
                 <SecondContentSection>
-                    <img src={img} alt=""/>
+                    <img src={img} alt="Ilustração de colaboração" />
                 </SecondContentSection>
             </InvitePartnerContent>
         </SencondSectionContainer>
-    )
+    );
 }

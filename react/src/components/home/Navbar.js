@@ -1,5 +1,4 @@
-import styled from 'styled-components'
-
+import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
 function Navbar(name) {
@@ -7,32 +6,81 @@ function Navbar(name) {
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding-left: 24px;
-        padding-right: 24px;
-    `
+        padding: 24px;
+        
+        @media (max-width: 1444px) {
+            padding: 20px;
+        }
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        @media (max-width: 768px) {
+            padding: 16px;
+        }
+
+        @media (max-width: 480px) {
+            padding: 12px;
+        }
+    `;
 
     const LogoNavbar = styled.div`
         cursor: pointer;
         flex: auto;
-    `
+
+        @media (max-width: 1024px) {
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 20px;
+        }
+    `;
 
     const LinksNavbar = styled.div`
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding: 30px 0;
         cursor: pointer;
         font-weight: 500;
         flex: auto;
         display: flex;
         justify-content: center;
         gap: 66px;
-    `
+
+        @media (max-width: 1444px) {
+            gap: 50px;
+        }
+
+        @media (max-width: 1024px) {
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: flex-start;
+        }
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+    `;
 
     const ButtonsNavbarContainer = styled.div`
         flex: auto;
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         gap: 8px;
-    `
+
+        @media (max-width: 1024px) {
+            margin-top: 16px;
+            justify-content: center;
+        }
+
+        @media (max-width: 480px) {
+            flex-direction: column;
+            gap: 8px;
+        }
+    `;
 
     const ButtonsNavbar = styled.button`
         cursor: pointer;
@@ -44,14 +92,26 @@ function Navbar(name) {
         color: #074173;
         border: none;
         border-radius: 4px;
-    `
+
+        @media (max-width: 1024px) {
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            width: 100%; /* Preenche o espaço disponível */
+        }
+    `;
 
     const Anchor = styled.a`
         text-decoration: none;
-        &hover: {
+        &:hover {
             cursor: pointer;
         }
-    `
+
+        @media (max-width: 480px) {
+            font-size: 14px;
+        }
+    `;
 
     return (
         <NavbarSection>
@@ -60,7 +120,7 @@ function Navbar(name) {
             </LogoNavbar>
             <LinksNavbar>
                 <Link to={'/'} style={{ 'textDecoration': 'none' }}>
-                    <Anchor >Empresas que investem</Anchor>
+                    <Anchor>Empresas que investem</Anchor>
                 </Link>
                 <Link to={'/'} style={{ 'textDecoration': 'none' }}>
                     <Anchor>Contato</Anchor>
@@ -78,18 +138,18 @@ function Navbar(name) {
                         <ButtonsNavbar>Invista em uma ONG</ButtonsNavbar>
                     </Link>
                 </ButtonsNavbarContainer>
-            ) :
-                (<ButtonsNavbarContainer>
+            ) : (
+                <ButtonsNavbarContainer>
                     <Link to={'/login'}>
                         <ButtonsNavbar>Login</ButtonsNavbar>
                     </Link>
                     <Link to={'/register'}>
                         <ButtonsNavbar>Cadastre-se</ButtonsNavbar>
                     </Link>
-                </ButtonsNavbarContainer>)
-            }
+                </ButtonsNavbarContainer>
+            )}
         </NavbarSection>
-    )
+    );
 }
 
 export default Navbar;

@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import Axios from 'axios';
 
 import '../../styles/form.css'
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -60,48 +60,47 @@ function RegisterCompanyForm() {
     };
 
     return (
-        <RegisterBox>
-            <H2>CADASTRE SUA ONG E AGUARDE O CONTATO DE UM INVESTIDOR</H2>
-            <Formik
-                initialValues={{ email: "", area: "", contact: "", address: "", cnpj: "", ods: "" }}
-                validationSchema={validationRegister}
-                onSubmit={handleClickRegisterCompany}
-            >
-                {({ values }) => (
-                    <Form>
-                        {['name', 'area', 'contact', 'address', 'cnpj', 'ods'].map((field) => (
-                            <InputBox
-                                key={field}
-                                isActive={focusedField[field] || values[field]}
-                            >
-                                <label className="input-label">
-                                    {field === 'area' ? 'Área de atuação' :
-                                        field === 'contact' ? 'Contato' :
-                                            field === 'name' ? 'Nome da ONG' :
-                                                field === 'address' ? 'Endereço' :
-                                                    field === 'cnpj' ? 'cnpj' :
-                                                        field === 'ods' ? 'ODS atendida' :
-                                                            field.charAt(0).toUpperCase() + field.slice(1)}
-                                </label>
-                                <Field
-                                    name={field}
-                                    className="form-field"
-                                    onFocus={() => handleFocus(field)}
-                                    onBlur={(e) => handleBlur(field, e.target.value)}
-                                />
-                                <ErrorMessage component="span" name={field} className="form-error" />
-                            </InputBox>
-                        ))}
-                        <Links>
-                            <SubmitButton type="submit">Continuar</SubmitButton>
-                            <Link to={'/login'}>
-                                <Anchor>Já possui uma conta?</Anchor>
-                            </Link>
-                        </Links>
-                    </Form>
-                )}
-            </Formik>
-        </RegisterBox>
+        <Container>
+            <RegisterBox>
+                <H2>CADASTRE SUA ONG E AGUARDE O CONTATO DE UM INVESTIDOR</H2>
+                <Formik
+                    initialValues={{ email: "", area: "", contact: "", address: "", cnpj: "", ods: "" }}
+                    validationSchema={validationRegister}
+                    onSubmit={handleClickRegisterCompany}
+                >
+                    {({ values }) => (
+                        <Form>
+                            {['name', 'area', 'contact', 'address', 'cnpj', 'ods'].map((field) => (
+                                <InputBox
+                                    key={field}
+                                    isActive={focusedField[field] || values[field]}
+                                >
+                                    <label className="input-label">
+                                        {field === 'area' ? 'Área de atuação' :
+                                            field === 'contact' ? 'Contato' :
+                                                field === 'name' ? 'Nome da ONG' :
+                                                    field === 'address' ? 'Endereço' :
+                                                        field === 'cnpj' ? 'cnpj' :
+                                                            field === 'ods' ? 'ODS atendida' :
+                                                                field.charAt(0).toUpperCase() + field.slice(1)}
+                                    </label>
+                                    <Field
+                                        name={field}
+                                        className="form-field"
+                                        onFocus={() => handleFocus(field)}
+                                        onBlur={(e) => handleBlur(field, e.target.value)}
+                                    />
+                                    <ErrorMessage component="span" name={field} className="form-error" />
+                                </InputBox>
+                            ))}
+                            <Links>
+                                <SubmitButton type="submit">Continuar</SubmitButton>
+                            </Links>
+                        </Form>
+                    )}
+                </Formik>
+            </RegisterBox>
+        </Container>
     )
 }
 
@@ -114,6 +113,12 @@ const RegisterBox = styled.div`
   height: max-content;
   margin-bottom: 120px;
 `;
+
+const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
 
 const H2 = styled.h2`
   padding-bottom: 38px;
